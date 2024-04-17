@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  display: grid;
+  gap: 5px;
+  grid-template-areas:
+    "h1 h1 h1"
+    "header header header"
+    "banner banner o1"
+    "banner banner o2"
+    "sm m m"
+    "recent m m"
+    "t m m"
+    "f f f";
+}
+.wrapper > * {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+h1 {
+  background: blue;
+  color: white;
+  grid-area: h1;
+}
+header {
+  background: red;
+  color: white;
+  grid-area: header;
+}
+.banner {
+  background: linear-gradient(135deg, red, blue);
+  color: white;
+  min-height: 20vh;
+  grid-area: banner;
+}
+.off1 {
+  background: brown;
+  grid-area: o1;
+}
+.off2 {
+  background: purple;
+  grid-area: o2;
+}
+.side-menu {
+  background: skyblue;
+  grid-area: sm;
+}
+.recent {
+  background: blue;
+  grid-area: recent;
+}
+.tags {
+  background-color: rgb(241, 69, 69);
+  color: white;
+  grid-area: t;
+}
+.main {
+  min-height: 30vh;
+  background: radial-gradient(red, yellow, blue);
+  grid-area: m;
+}
+
+footer {
+  background: black;
+  color: white;
+  grid-area: f;
+}
+
+/* ipad  */
+@media (max-width: 992px) {
+  .wrapper {
+    grid-template-areas:
+      "h1 h1"
+      "header header"
+      "banner banner"
+      "banner banner"
+      "o1 o2"
+      "sm sm"
+      "m m"
+      "recent t"
+      "f f";
+  }
+}
+
+/* phones  */
+@media (max-width: 550px) {
+  .wrapper {
+    grid-template-areas:
+      "h1"
+      "header"
+      "banner"
+      "banner"
+      "o1"
+      "o2"
+      "sm"
+      "m"
+      "t"
+      "recent"
+      "f";
+  }
+}
